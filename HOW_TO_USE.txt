@@ -1,0 +1,20 @@
+If you already have preset data (x,y coordinate .txt files) skip to step 3.
+
+1.  Run generateRandom.exe with ./generateRandom.exe or if using terminal: generateRandom.exe
+
+2.  This will prompt you for the number of n cities to create, the gridsize, seed, and the filename (do not add .txt)
+        This will create a .txt file showing all of the x,y coordinates of the cities and it will also generate a SVG file
+        showing a visual of all the cities and the connections between them.
+
+3.  Run one of the three TSP algorithms. (NOTE: For n cities > 12, runtime will be long and isn't feasable after ~13)
+        To run these, run:
+        (BRUTE FORCE) ./bruteForce.exe filename.txt OR bruteForce.exe filename.txt
+        (GREEDY) ./greedyTSP.exe filename.txt OR ./greedyTSP.exe filename.txt
+        (CHRISTOFIDES) ./christofides.exe filename.txt OR ./christofides.exe filename.txt
+
+        (Program will automatically drop .txt from filename and create SVG)
+
+4.  After TSP algorithm computes, to generate the SVG solution it will prompt you for the original grid size of the data.
+        Enter this value so that the SVG can scale correctly and draw the solution.
+
+5.  Program should be done running and you can view the solution on screen or if you prefer a visual, open the SVG file

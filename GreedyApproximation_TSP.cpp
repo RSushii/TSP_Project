@@ -110,11 +110,10 @@ double tourLength(const vector<int>& tour, const vector<vector<double>>& d) {
 void writeSolutionSVG(const vector<Point>& points, const vector<int>& tour, float gridSize, const string& outname)
 {
     float scale = 800.0 / gridSize;
-    ofstream svg (outname + ".svg");
+    ofstream svg(outname + ".svg");
 
-    if (!svg.is_open())
-    {
-        cout << "Error: Couldn't write solution SVG" << endl;
+    if (!svg.is_open()) {
+        cout << "Error: Could not write solution SVG" << endl;
         return;
     }
 
@@ -130,12 +129,13 @@ void writeSolutionSVG(const vector<Point>& points, const vector<int>& tour, floa
 
     for (int i = 0; i < (int)tour.size() - 1; i++)
     {
-        int a = tour [i];
-        int b = tour [i + 1];
+        int a = tour[i];     // Current city index
+        int b = tour[i + 1]; // Next city index
 
-        Point p1 = points[a];
-        Point p2 = points[b];
+        Point p1 = points[a];    // Coordinates of city a
+        Point p2 = points[b];    // Coordinates of city b
 
+        // Draw lime green directional arrows
         svg << "<line x1='" << p1.x * scale
             << "' y1='" << p1.y * scale
             << "' x2='" << p2.x * scale
@@ -143,6 +143,7 @@ void writeSolutionSVG(const vector<Point>& points, const vector<int>& tour, floa
             << "' stroke='lime' stroke-width='3' marker-end='url(#arrow)' />\n";
     }
 
+    // Draw red dots (cities)
     for (auto& p : points)
     {
         svg << "<circle cx='" << p.x * scale

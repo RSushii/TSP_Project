@@ -243,6 +243,7 @@ vector<int> christofidesTour(const vector<vector<double>>& d) {
     return tour;
 }
 
+// Pretty much the same as the other writeSolutionSVG functions, built to be almost a universal function/solution for this part
 void writeSolutionSVG(const vector<Point>& points, const vector<int>& bestTour, float gridSize, const string& outname)
 {
     float scale = 800.0 / gridSize;
